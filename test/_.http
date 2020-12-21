@@ -1,0 +1,40 @@
+@HOST = http://localhost:3001
+@STORY_ID = 5fdffb86e7852a5b64081add
+
+### ROOT
+
+GET {{HOST}}
+Content-Type: application/json
+
+### GLOBAL
+
+###
+GET {{HOST}}/stories
+Content-Type: application/json
+###
+GET {{HOST}}/stories?limit=2&skip=1
+Content-Type: application/json
+###
+POST {{HOST}}/stories
+Content-Type: application/json
+
+{
+    "title": "title 1",
+    "imageUrl": "..."
+}
+
+### BY STORY ID
+
+###
+GET {{HOST}}/stories/{{STORY_ID}}
+Content-Type: application/json
+###
+GET {{HOST}}/stories/{{STORY_ID}}/events
+Content-Type: application/json
+###
+POST {{HOST}}/stories/{{STORY_ID}}/events
+Content-Type: application/json
+
+{
+    "title": "event 1"
+}
