@@ -4,11 +4,17 @@ Answer can be found on [StackOverflow](https://stackoverflow.com/q/65351733/2800
 
 ***
 
-A simple project that creates a basic REST API to handle MOngoDB documents via mongoose package
+A simple project that creates a basic REST API to handle MongoDB documents via mongoose package
+
+## Project structure
+
+One gets used to some kind of configurationless setup, and having an `index` file in each folder allows one to import only the default, and have all objects named buy file name, so when adding a new model, engine or route, one only need to add one more file and do not worry about imports paths...
+
+## REST Client extension
 
 It uses an `.http` file (found in the `test` folder) that creates a POSTMAN alike query with the VS Code extension [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client)
 
-Here's a demo
+## Demo
 
 ![](https://i.imgur.com/UxLhy1z.gif)
 
