@@ -18,7 +18,8 @@ app.use(express.json()); // parse JSON bodies
 
 // #######################################################################
 // routes
-app.use('/', routes);
+app.use('/', routes.root);
+app.use('/stories', routes.stories);
 
 // #######################################################################
 // database

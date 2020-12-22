@@ -1,7 +1,7 @@
 // #######################################################################
-// engine.js
+// engines > stories.js
 
-const { Story } = require('./models');
+const { Story } = require('../models');
 
 const getAllStories = async ({ skip = 0, limit = 10 }) => Story.find()
   .sort({ createdAt: -1 })

@@ -1,3 +1,6 @@
+// #######################################################################
+// models > Story.js
+
 const mongoose = require('mongoose');
 
 const GeoSchema = mongoose.Schema({
