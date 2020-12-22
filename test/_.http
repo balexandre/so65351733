@@ -1,3 +1,6 @@
+// #######################################################################
+// use VSCode Extension "REST Client" to work with this file
+
 @HOST = http://localhost:3001
 @STORY_ID = 5fdffb86e7852a5b64081add
 
