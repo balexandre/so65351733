@@ -1,24 +1,35 @@
-const express = require('express');
+// #######################################################################
+// index.js
 
-const app = express();
+const express = require('express');
 const mongoose = require('mongoose');
 
-app.use(express.json()); // parse JSON bodies
-// app.use(express.urlencoded()); // parse URL-encoded bodies
+const routes = require('./routes');
+
+const app = express();
 
 const MONGO_URL = process.env.MONGO_URL || 'mongodb://localhost/test';
 const PORT = process.env.PORT || 3001;
 
-const routes = require('./routes');
+// #######################################################################
+// middleware
+app.use(express.json()); // parse JSON bodies
+// app.use(express.urlencoded()); // parse URL-encoded bodies
 
+// #######################################################################
+// routes
 app.use('/', routes);
 
+// #######################################################################
+// database
 mongoose.connect(MONGO_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
   useFindAndModify: false,
 });
+
+// #######################################################################
 
 // eslint-disable-next-line no-console
 const log = (msg, ...arg) => console.log(msg, arg);
