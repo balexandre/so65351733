@@ -75,9 +75,9 @@ const StorySchema = mongoose.Schema(
     ],
     events: [EventSchema],
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
-const Story = mongoose.model('Story', StorySchema)
+const Story = mongoose.model('Story', StorySchema);
 
-module.exports = Story
+module.exports = Story;

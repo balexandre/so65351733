@@ -20,8 +20,6 @@ const addEventToStoryId = async (id, evt) => Story.updateOne(
   { $push: { events: evt } },
 );
 
-exports.getStoryById = getStoryById;
-exports.getAllStories = getAllStories;
-exports.getEventsByStoryId = getEventsByStoryId;
-exports.addStory = addStory;
-exports.addEventToStoryId = addEventToStoryId;
+module.exports = {
+  getStoryById, getAllStories, getEventsByStoryId, addStory, addEventToStoryId,
+};
