@@ -4,6 +4,8 @@
 @HOST = http://localhost:3001
 @STORY_ID = 5fdffb86e7852a5b64081add
 
+@EVENT_ID = 5fe373e399c1d149a4b3ebaa
+
 ### ROOT
 
 GET {{HOST}}
@@ -32,6 +34,9 @@ Content-Type: application/json
 GET {{HOST}}/stories/{{STORY_ID}}
 Content-Type: application/json
 ###
+DELETE {{HOST}}/stories/{{STORY_ID}}
+Content-Type: application/json
+###
 GET {{HOST}}/stories/{{STORY_ID}}/events
 Content-Type: application/json
 ###
@@ -39,5 +44,8 @@ POST {{HOST}}/stories/{{STORY_ID}}/events
 Content-Type: application/json
 
 {
-    "title": "event 1"
+    "title": "event 4"
 }
+###
+DELETE {{HOST}}/stories/{{STORY_ID}}/events/{{EVENT_ID}}
+Content-Type: application/json

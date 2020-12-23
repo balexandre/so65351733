@@ -11,15 +11,28 @@ const getAllStories = async ({ skip = 0, limit = 10 }) => Story.find()
 
 const getStoryById = async (id) => Story.findById(id);
 
-const getEventsByStoryId = async (id) => (await Story.findById(id)).events || [];
-
 const addStory = async (body) => Story.create(body);
+
+const deleteStory = async (id) => Story.deleteOne({ _id: id });
+
+const getEventsByStoryId = async (id) => (await Story.findById(id)).events || [];
 
 const addEventToStoryId = async (id, evt) => Story.updateOne(
   { _id: id },
   { $push: { events: evt } },
 );
 
+const deleteEventById = async (storyId, evtId) => Story.updateOne(
+  { _id: storyId },
+  { $pull: { events: { _id: evtId } } },
+);
+
 module.exports = {
-  getStoryById, getAllStories, getEventsByStoryId, addStory, addEventToStoryId,
+  getStoryById,
+  getAllStories,
+  getEventsByStoryId,
+  addStory,
+  addEventToStoryId,
+  deleteEventById,
+  deleteStory,
 };
